@@ -1,0 +1,23 @@
+/**:
+  ros__parameters:
+    dry_run: true
+    preview_topic: /cmd_vel_preview
+    waypoint_topic: /waypoint_stamped
+    image_topic: /camera/image_raw
+    model_status_topic: /nomad/status
+    status_topic: /controller/status
+    estop_topic: /nomad/emergency_stop
+    reset_estop_service: /nomad/reset_emergency_stop
+    reached_goal_topic: /topoplan/reached_goal
+    waypoint_frame: base_link
+    camera_frame: camera_optical_frame
+    control_hz: 20.0
+    observation_hz: 4.0
+    max_linear_mps: 0.2
+    max_angular_rps: 0.4
+    waypoint_timeout_sec: 0.6
+    source_timeout_sec: 1.0
+    camera_timeout_sec: 1.0
+    future_tolerance_sec: 0.2
+    goal_tolerance_m: 0.02
+    max_waypoint_distance_m: 5.0

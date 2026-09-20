@@ -1,0 +1,14 @@
+/**:
+  ros__parameters:
+    frame_id: base_link
+    trajectory_topic: /nomad/trajectory_poses
+    waypoint_topic: /waypoint_stamped
+    velocity_topic: /cmd_vel_preview
+    model_status_topic: /nomad/status
+    controller_status_topic: /controller/status
+    marker_topic: /nomad/visualization
+    refresh_hz: 10.0
+    prediction_timeout_sec: 1.0
+    velocity_timeout_sec: 0.6
+    future_tolerance_sec: 0.2
+    arrow_horizon_sec: 2.0

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+  <!-- One RViz process only: domain 0, participant 11, UDP 7432/7433.
+       Run inference/visualizer in ONE context using participant 10 (7430/7431).
+       Explicitly announce loopback for same-host inference and Windows Wi-Fi
+       for the robot. Do not rely on Docker Desktop's Wi-Fi-address hairpin.
+       The UDP transport has no interface whitelist: bind wildcard interfaces.
+       No External Locators, Docker internal IPs or automatic 0.0.0.0 locators.
+       127.0.0.1:7430 bootstraps local inference, whose robot_live_udp.xml also
+       announces loopback. Replies can use 127.0.0.1:7432/7433 locally, while
+       192.168.0.180:7432/7433 remains the robot-facing return locator.
+       The runner must verify the Wi-Fi address and all four PC ports. -->
+  <transport_descriptors>
+    <transport_descriptor>
+      <transport_id>robot_rviz_local_wifi_udp</transport_id>
+      <type>UDPv4</type>
+    </transport_descriptor>
+  </transport_descriptors>
+  <participant profile_name="robot_rviz_local_and_wifi" is_default_profile="true">
+    <rtps>
+      <participantID>11</participantID>
+      <userTransports><transport_id>robot_rviz_local_wifi_udp</transport_id></userTransports>
+      <useBuiltinTransports>false</useBuiltinTransports>
+      <defaultUnicastLocatorList>
+        <locator><udpv4><address>127.0.0.1</address><port>7433</port></udpv4></locator>
+        <locator><udpv4><address>192.168.0.180</address><port>7433</port></udpv4></locator>
+      </defaultUnicastLocatorList>
+      <builtin>
+        <metatrafficUnicastLocatorList>
+          <locator><udpv4><address>127.0.0.1</address><port>7432</port></udpv4></locator>
+          <locator><udpv4><address>192.168.0.180</address><port>7432</port></udpv4></locator>
+        </metatrafficUnicastLocatorList>
+        <initialPeersList>
+          <locator><udpv4><address>127.0.0.1</address><port>7430</port></udpv4></locator>
+          <locator><udpv4><address>192.168.0.100</address></udpv4></locator>
+        </initialPeersList>
+      </builtin>
+    </rtps>
+  </participant>
+</profiles>

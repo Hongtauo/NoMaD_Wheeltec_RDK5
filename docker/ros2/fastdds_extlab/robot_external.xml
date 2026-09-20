@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+  <!-- Experimental: one process only, host networking, domain 0.
+       Recheck Wi-Fi IP before use. This does not configure host port forwarding.
+       No motion publisher may be started with this test profile. -->
+  <transport_descriptors>
+    <transport_descriptor>
+      <transport_id>external_udp</transport_id>
+      <type>UDPv4</type>
+    </transport_descriptor>
+  </transport_descriptors>
+  <participant profile_name="external_camera_test" is_default_profile="true">
+    <rtps>
+      <participantID>10</participantID>
+      <userTransports><transport_id>external_udp</transport_id></userTransports>
+      <useBuiltinTransports>false</useBuiltinTransports>
+      <defaultUnicastLocatorList>
+        <locator><udpv4><address>0.0.0.0</address><port>7431</port></udpv4></locator>
+      </defaultUnicastLocatorList>
+      <default_external_unicast_locators>
+        <udpv4 externality="1" cost="0" mask="24">
+          <address>192.168.0.180</address><port>7431</port>
+        </udpv4>
+      </default_external_unicast_locators>
+      <ignore_non_matching_locators>false</ignore_non_matching_locators>
+      <builtin>
+        <metatrafficUnicastLocatorList>
+          <locator><udpv4><address>0.0.0.0</address><port>7430</port></udpv4></locator>
+        </metatrafficUnicastLocatorList>
+        <metatraffic_external_unicast_locators>
+          <udpv4 externality="1" cost="0" mask="24">
+            <address>192.168.0.180</address><port>7430</port>
+          </udpv4>
+        </metatraffic_external_unicast_locators>
+        <initialPeersList>
+          <locator><udpv4><address>192.168.0.100</address></udpv4></locator>
+        </initialPeersList>
+      </builtin>
+    </rtps>
+  </participant>
+</profiles>

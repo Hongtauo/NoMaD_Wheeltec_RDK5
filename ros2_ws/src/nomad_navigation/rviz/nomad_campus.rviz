@@ -1,0 +1,65 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ''
+  Global Options:
+    Background Color: 28; 32; 40
+    Fixed Frame: base_link
+    Frame Rate: 30
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Name: Local nominal metric grid (not a map)
+      Enabled: true
+      Cell Size: 0.1
+      Plane Cell Count: 30
+      Color: 80; 90; 110
+      Reference Frame: base_link
+    - Class: rviz_default_plugins/Axes
+      Name: Robot-local axes
+      Enabled: true
+      Reference Frame: base_link
+      Length: 0.15
+      Radius: 0.003
+    - Class: rviz_default_plugins/MarkerArray
+      Name: SERVER PREDICTIONS ONLY (not executed motion)
+      Enabled: true
+      Topic:
+        Value: /nomad/campus_preview/markers
+        Reliability Policy: Reliable
+        Durability Policy: Transient Local
+        History Policy: Keep Last
+        Depth: 1
+    - Class: rviz_default_plugins/Image
+      Name: Latest camera preview (blank when stale)
+      Enabled: true
+      Topic:
+        Value: /nomad/campus_preview/image
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Depth: 1
+      Transport Hint: raw
+      Queue Size: 1
+  Enabled: true
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+  Views:
+    Current:
+      Class: rviz_default_plugins/TopDownOrtho
+      Name: API local predictions
+      Target Frame: <Fixed Frame>
+      Angle: 1.57079632679
+      Scale: 500
+      X: 0.25
+      Y: 0.0
+      Near Clip Distance: 0.01
+Window Geometry:
+  Width: 1440
+  Height: 900
+  X: 60
+  Y: 40

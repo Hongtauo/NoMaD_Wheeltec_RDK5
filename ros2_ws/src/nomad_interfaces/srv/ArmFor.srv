@@ -1,0 +1,9 @@
+# TIMED: 0 < duration_sec <= 10. CONTINUOUS: duration_sec must be 0.
+# Both modes retain all safety interlocks; failures require explicit rearming.
+uint8 TIMED=0
+uint8 CONTINUOUS=1
+uint8 mode
+float64 duration_sec
+---
+bool success
+string message

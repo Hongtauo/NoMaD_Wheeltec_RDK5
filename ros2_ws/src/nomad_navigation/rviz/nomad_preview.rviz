@@ -1,0 +1,75 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Global Options:
+    Background Color: 28; 32; 40
+    Fixed Frame: base_link
+    Frame Rate: 30
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Name: Local grid (nominal meters)
+      Enabled: true
+      Cell Size: 0.1
+      Plane Cell Count: 20
+      Plane: XY
+      Color: 75; 84; 100
+      Alpha: 0.5
+      Reference Frame: <Fixed Frame>
+      Line Style:
+        Value: Lines
+        Line Width: 0.002
+    - Class: rviz_default_plugins/Axes
+      Name: Robot axes (X forward, Y left)
+      Enabled: true
+      Reference Frame: base_link
+      Length: 0.15
+      Radius: 0.003
+    - Class: rviz_default_plugins/MarkerArray
+      Name: NoMaD local decision (not simulation)
+      Enabled: true
+      Topic:
+        Value: /nomad/visualization
+        Reliability Policy: Reliable
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Depth: 1
+    - Class: rviz_default_plugins/Image
+      Name: Video input
+      Enabled: true
+      Topic:
+        Value: /camera/image_raw
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Depth: 1
+      Transport Hint: raw
+      Normalize Range: true
+      Queue Size: 1
+  Enabled: true
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/FocusCamera
+  Views:
+    Current:
+      Class: rviz_default_plugins/TopDownOrtho
+      Name: Local top down
+      Target Frame: <Fixed Frame>
+      Angle: 1.57079632679
+      Scale: 650
+      X: 0.28
+      Y: 0.0
+      Near Clip Distance: 0.01
+  Value: true
+Window Geometry:
+  Width: 1280
+  Height: 820
+  X: 80
+  Y: 60
+  Hide Left Dock: false
+  Hide Right Dock: true

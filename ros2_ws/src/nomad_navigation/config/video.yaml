@@ -1,0 +1,9 @@
+/**:
+  ros__parameters:
+    image_topic: /camera/image_raw
+    frame_id: camera_optical_frame
+    publish_fps: 4.0
+    loop: false
+    start_sec: 0.0
+    end_sec: -1.0
+    resize_width: 320

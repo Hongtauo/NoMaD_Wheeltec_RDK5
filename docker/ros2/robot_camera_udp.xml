@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+  <!-- Separate from local preview: domain 0 is set by the invoking process.
+       A static discovery peer does NOT fix unreachable advertised data locators/NAT.
+       Do not use this profile for motion publishers. -->
+  <transport_descriptors>
+    <transport_descriptor>
+      <transport_id>robot_camera_udp</transport_id>
+      <type>UDPv4</type>
+    </transport_descriptor>
+  </transport_descriptors>
+  <participant profile_name="robot_camera_view" is_default_profile="true">
+    <rtps>
+      <userTransports><transport_id>robot_camera_udp</transport_id></userTransports>
+      <useBuiltinTransports>false</useBuiltinTransports>
+      <builtin>
+        <initialPeersList>
+          <locator><udpv4><address>192.168.0.100</address></udpv4></locator>
+        </initialPeersList>
+      </builtin>
+    </rtps>
+  </participant>
+</profiles>

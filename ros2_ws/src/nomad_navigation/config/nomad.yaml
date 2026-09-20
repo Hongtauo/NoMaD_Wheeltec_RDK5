@@ -1,0 +1,21 @@
+/**:
+  ros__parameters:
+    image_topic: /camera/image_raw
+    image_transport: raw  # raw: sensor_msgs/Image; compressed: sensor_msgs/CompressedImage
+    waypoint_topic: /waypoint
+    sampled_actions_topic: /sampled_actions
+    stamped_waypoint_topic: /waypoint_stamped
+    status_topic: /nomad/status
+    output_frame_id: base_link
+    device: cuda
+    warmup: true
+    num_samples: 8
+    waypoint_index: 2
+    observation_hz: 4.0
+    inference_hz: 4.0
+    max_speed_mps: 0.2
+    image_timeout_sec: 1.0
+    max_frame_gap_sec: 0.75
+    future_tolerance_sec: 0.2
+    seed: 0
+    run_name: nomad-ros2

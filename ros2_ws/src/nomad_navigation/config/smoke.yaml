@@ -1,0 +1,4 @@
+/**:
+  ros__parameters:
+    heartbeat_period_sec: 2.0
+    greeting: "nomad_navigation is ready"

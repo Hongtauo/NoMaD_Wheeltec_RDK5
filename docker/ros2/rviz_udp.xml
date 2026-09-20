@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+  <!-- Use this profile on BOTH demo and GUI processes sharing ros2-dev's network.
+       Separate IPC forbids SHM; explicitly bind UDP to loopback. Set ROS_LOCALHOST_ONLY=0
+       because Humble otherwise adds SHM back after loading this profile. -->
+  <transport_descriptors>
+    <transport_descriptor>
+      <transport_id>rviz_udp</transport_id>
+      <type>UDPv4</type>
+      <interfaceWhiteList><address>127.0.0.1</address></interfaceWhiteList>
+    </transport_descriptor>
+  </transport_descriptors>
+  <participant profile_name="rviz_udp_participant" is_default_profile="true">
+    <rtps>
+      <userTransports><transport_id>rviz_udp</transport_id></userTransports>
+      <useBuiltinTransports>false</useBuiltinTransports>
+    </rtps>
+  </participant>
+</profiles>

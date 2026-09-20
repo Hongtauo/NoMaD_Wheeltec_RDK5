@@ -1,0 +1,66 @@
+# Local inputs, experiment results, robot logs and deployment evidence
+/offline_data/
+/offline_outputs/
+/outputs/
+
+# ROS/Python build outputs and machine-local editor state
+/ros2_ws/build/
+/ros2_ws/install/
+/ros2_ws/log/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage*
+htmlcov/
+.vscode/
+.idea/
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+*.log
+
+# Model weights, recordings and generated archives (provision separately)
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.engine
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.bag
+*.db3
+*.mcap
+*.tar
+*.tar.gz
+*.zip
+
+# Credentials, TLS material, robot identity and session state
+.env
+.env.*
+!.env.example
+!.env.template
+.ssh/
+.gnupg/
+.sessions/
+secrets/
+.secrets/
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.token
+token.txt
+api_token.txt
+identity.json
+
+# Upstream repositories remain intact locally; never publish their Git metadata
+**/.git/
