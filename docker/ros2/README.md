@@ -1,5 +1,7 @@
 # ROS 2 Humble + NoMaD 系统 Python 环境
 
+**首次克隆请先看[根 README 的从零复现流程](../../README.md)**：包含本地镜像构建、权重下载、自己的视频、API/RViz 以及[新小车安装](../../docs/首次部署_车端配置.md)。本页保留环境细节和历史记录；下文旧容器、F 盘路径、`3-r_frames` 及 `outputs/` 报告不是克隆自带的资产。
+
 使用 `/usr/bin/python3`（3.10），不创建 Conda 或 venv。Humble、OpenCV 和
 `cv_bridge` 由 apt 管理；PyTorch 与模型依赖通过 `python3 -m pip` 安装。
 
@@ -83,11 +85,12 @@ Dockerfile 复用上述依赖安装脚本。当前阶段先验证现有容器；
 在 Windows 项目根目录执行：
 
 ```powershell
-docker build -f docker/ros2/Dockerfile -t socialembodiedagent/nomad-ros2:humble-cu124 .
+docker build -f docker/ros2/Dockerfile -t socialembodiedagent/nomad-ros2-runtime:robot-preview-20260909 .
 ```
 
-镜像不复制项目源码和权重，运行时须继续挂载
-`F:\SocialEmbodiedAgent:/workspace/SocialEmbodiedAgent`。
+该名称是本地构建标签，当前校园网 API/RViz 创建脚本固定查找它，不会拉取作者私有镜像。
+镜像不复制项目源码和权重，运行时须挂载自己的项目目录到 `/workspace/SocialEmbodiedAgent`；
+`F:\SocialEmbodiedAgent:/workspace/SocialEmbodiedAgent` 只是作者路径示例。
 当前容器通过 editable install 使用源码；Dockerfile 使用 `PYTHONPATH` 暴露同一源码目录。
 两种方式均要求这两个仓库位于项目目录：`visualnav-transformer`、`diffusion_policy`。
 

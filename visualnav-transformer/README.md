@@ -1,5 +1,7 @@
 # General Navigation Models: GNM, ViNT and NoMaD
 
+> **本项目的 Wheeltec RDK5 / ROS 2 复现入口是[根 README](../README.md)**，包括环境、权重、离线推理和校园网部署。下文保留上游项目说明；其 ROS 1/LoCoBot/Conda 步骤不是本项目 ROS 2 的安装流程。上游来源与版本见 [THIRD_PARTY_NOTICES](../THIRD_PARTY_NOTICES.md)。
+
 **Contributors**: Dhruv Shah, Ajay Sridhar, Nitish Dashora, Catherine Glossop, Kyle Stachowicz, Arjun Bhorkar, Kevin Black, Noriaki Hirose, Sergey Levine
 
 _Berkeley AI Research_

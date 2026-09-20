@@ -1,5 +1,7 @@
 # NoMaD ROS 2 工作空间
 
+**首次部署从[项目根 README](../README.md)开始**，不要直接照历史会话命令启动真机。新小车缺省没有 `nomad_live_control`、接口构建、证书或身份登记，见[车端首次配置](../docs/首次部署_车端配置.md)。Windows 挂载路径的符号链接构建可能失败，建议采用[根 README 第 8 节](../README.md#8-可选ros-2-构建和测试)的 Linux 卷 build/install/log；旧 DDS/热点流程与校园网 API 模式不能混用。
+
 `ament_python` 包包含 `smoke_node`（心跳日志）、`video_publisher`（本地视频图像输入）、
 `nomad_node`（NoMaD 无目标探索推理）、`waypoint_controller`（速度预览及软件保护），
 以及 `nomad_visualization`（RViz 局部决策图形）和模型就绪等待工具。
